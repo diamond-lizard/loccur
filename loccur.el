@@ -101,7 +101,7 @@
 ;; should be defined before define-minor-mode
 (defvar loccur-mode-map
   (let ((map (make-sparse-keymap)))
-    (define-key map (kbd "RET") '(lambda () (interactive) (loccur nil)))
+    (define-key map (kbd "RET") #'(lambda () (interactive) (loccur nil)))
     ;; redefine Ctrl+Up/Down to Up/Down, since it looks like some problem
     ;; with backward-paragraph and forward-paragraph with invisible overlays
     (define-key map (kbd "<C-up>") 'previous-line)
